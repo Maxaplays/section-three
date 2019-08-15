@@ -7,8 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   loadedFeature = 'recipe';
-
+  name = '';
+  dataPassRD = '';
   onNavigate(feature: string) {
   this.loadedFeature = feature;
   }
+
+  printName(event: string) {
+    console.log(event);
+  }
+
+
 }

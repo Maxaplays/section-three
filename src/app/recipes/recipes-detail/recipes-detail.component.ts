@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges, DoCheck} from '@angular/core';
 import {Recipe} from '../recipe.model';
 
 @Component({
@@ -6,11 +6,26 @@ import {Recipe} from '../recipe.model';
   templateUrl: './recipes-detail.component.html',
   styleUrls: ['./recipes-detail.component.css']
 })
-export class RecipesDetailComponent implements OnInit {
+export class RecipesDetailComponent implements OnInit, DoCheck {
   @Input() recipe: Recipe;
-  constructor() { }
+  @Input() name: string;
+  @Input() nameOutside: string;
+  dataPass = '';
+  @Output() text = new EventEmitter<string>();
 
-  ngOnInit() {
+  constructor() {
+  }
+
+
+  ngDoCheck() {
+    if (this.dataPass !== '') {
+      this.text.emit(this.dataPass);
+    } else {
+      this.text.emit('');
+    }
+  }
+
+  ngOnInit(): void {
   }
 
 }
