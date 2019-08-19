@@ -11,6 +11,7 @@ import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipe
 import { ShoopingListComponent } from './shooping-list/shooping-list.component';
 import { ShoopingEditComponent } from './shooping-list/shooping-edit/shooping-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {DropdownDirective} from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     RecipesDetailComponent,
     RecipesItemComponent,
     ShoopingListComponent,
-    ShoopingEditComponent
+    ShoopingEditComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
