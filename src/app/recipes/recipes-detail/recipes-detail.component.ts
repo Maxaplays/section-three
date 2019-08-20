@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges, DoCheck} from '@angular/core';
 import {Recipe} from '../recipe.model';
+import {RecipesService} from '../recipes.service';
 
 @Component({
   selector: 'app-recipes-detail',
@@ -13,7 +14,7 @@ export class RecipesDetailComponent implements OnInit, DoCheck {
   dataPass = '';
   @Output() text = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private recipeService: RecipesService) {
   }
 
 
@@ -28,4 +29,7 @@ export class RecipesDetailComponent implements OnInit, DoCheck {
   ngOnInit(): void {
   }
 
+  toShoppingList() {
+    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredient);
+  }
 }
