@@ -2,17 +2,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes
+      <router-outlet></router-outlet>
+<!--      <app-recipes
        *ngIf="loadedFeature === 'recipe'"
        (nameThrow)="printName($event)"
        (dataThrow) = "dataPassRD = $event"></app-recipes>
 
-      <app-shooping-list *ngIf="loadedFeature !== 'recipe'"></app-shooping-list>
+      <app-shooping-list *ngIf="loadedFeature !== 'recipe'"></app-shooping-list>-->
     </div>
   </div>
-  <div class="row">
+<!--  <div class="row">
     <div class="col-md-12">
       <label>Hola, {{ dataPassRD }}</label>
     </div>
-  </div>
+  </div>-->
 </div>

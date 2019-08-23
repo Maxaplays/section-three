@@ -3,17 +3,9 @@
     <app-recipes-list
       (recipeWasSelected)="selectedRecipe = $event"
     [name] = "name1"></app-recipes-list>
-    <input type="text" class="form-control" [(ngModel)]="name1">
-    <button (click)="getName()">Get name</button>
-  </div>
-  <div class="col-md-7">
-    <app-recipes-detail
-      *ngIf="selectedRecipe; else infoText"
-      [recipe]="selectedRecipe"
-      [name]="name1"
-      (text)="passData($event)"></app-recipes-detail>
-    <ng-template #infoText>
-      <p>Please select a Recipe!</p>
-    </ng-template>
+    <div class="col-md-7">
+      <router-outlet></router-outlet>
+    </div>
+
   </div>
 </div>

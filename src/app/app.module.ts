@@ -13,6 +13,11 @@ import { ShoopingEditComponent } from './shooping-list/shooping-edit/shooping-ed
 import {ReactiveFormsModule} from '@angular/forms';
 import {DropdownDirective} from './shared/dropdown.directive';
 import {ShoopingService} from './shooping-list/shooping.service';
+import {RouterModule, Routes} from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
+import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
+
+
 
 @NgModule({
   declarations: [
@@ -24,12 +29,14 @@ import {ShoopingService} from './shooping-list/shooping.service';
     RecipesItemComponent,
     ShoopingListComponent,
     ShoopingEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    RecipesStartComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ShoopingService],
   bootstrap: [AppComponent]
